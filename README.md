@@ -3,20 +3,21 @@ A tool to generate synthetic autonomous driving datasets from arbitrary sensor s
 
 
 Carla-simulator defines its coordinate frame as LEFT-HANDED:
-        X is forward
-        Y is right
-        Z is up
+
+..        X is forward
+..      Y is right
+..      Z is up
 
 To define a sensor setup
 proceed by creating a SimulationCfg object, and then adding new sensors to it
-    
+```python     
 cfg = SimulationCfg(sync_sim_stepsize=FIXED_DELTA_SECONDS)
 camera_setup_blueprints = [SenseBP.RGBCAMERA, SenseBP.DEPTH, SenseBP.SEGMENTATION]
 cfg.add_sensor('lidar',SenseBP.LIDAR,
                    x=-0.595, z=1.73, 
                    sensor_options=lidar_sensor_options )
 cfg.add_sensor('cam0',SenseBP.RGBCAMERA,x=-0.325, z=1.65, sensor_options=front_camera_attributes )
-
+```
     
                     
 After the definition above, simply call:
