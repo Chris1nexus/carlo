@@ -3,10 +3,9 @@ A tool to generate synthetic autonomous driving datasets from arbitrary sensor s
 
 
 Carla-simulator defines its coordinate frame as LEFT-HANDED:
-
-...X is forward
-...Y is right
-...Z is up
++X is forward
++Y is right
++Z is up
 
 To define a sensor setup
 proceed by creating a SimulationCfg object, and then adding new sensors to it
