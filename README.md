@@ -30,14 +30,20 @@ read when calling the script sensor_capture.py
 Usage:
 
 0. define your sensor setup in this notebook or on your custom python script.
+1. 
 Make sure to give your preferred path where the simulation setup will be generated.
+
 In all cases, everything that concerns the simulation setup will fall under that directory,
 in the folder 'simsetup'
+
 Every attribute, pose or blueprint follows the naming convention provided by carla.
+
 So to define your own custom sensor options, just referr to (https://carla.readthedocs.io/en/latest/python_api/)
 1. start CarlaUE4.sh
 2. python3 sensor_capture.py --help to see available options
 DO NOT FORGET TO GIVE THE PATH OF THE DIRECTORY WHERE THE GENERATED SIMSETUP IS LOCATED 
+
 (do not add 'simsetup' to the folder path, just give the directory path that contains it)
+
 3. data will be stored in a folder named according to the chosen simulation parameters 
 (customizable by the command line args of sensor_capture.py)
