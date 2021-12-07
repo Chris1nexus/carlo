@@ -28,6 +28,7 @@ To generate the simulated sensor setup that will be automatically
 read when calling the script sensor_capture.py
     
 Usage:
+
 0. define your sensor setup in this notebook or on your custom python script.
 ⋅⋅⋅Make sure to give your preferred path where the simulation setup will be generated.⋅⋅
 ⋅⋅⋅In all cases, everything that concerns the simulation setup will fall under that directory,⋅⋅
