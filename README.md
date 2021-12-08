@@ -69,6 +69,7 @@ top level folder contains the directories
 *sensor_data
 *calibration
 
+### sensor data
 Sensor_data contains all data of the sensors in subfolders named with the provided sensor_label.     
 For each of these, one or more modalities, dependeing on how it has been set up, are available.  
 E.g. 
@@ -87,12 +88,15 @@ Additionally, the following data is always provided:
 * trajectory of ego vehicle, with respect to the center of its bounding box with z=0  
 
 
+### calibration and sensor poses w.r.t ego vehicle
 
 The calibration folder contains the pose of the sensor in vehicle coordinates.   
 * calibration
     * front_camera.json
     * imu.json
     * ...
+
+
 The origin of the vehicle coordinates is the center point of its bounding box at the ground level (z-coord == 0 at the contact point with the ground)     
 In case of camera sensors, the intrinsics matrix is also provided (can be found as calib_mtx in the files associated with cameras)     
 Although not always necessary, the **reflection matrix needed to transform from unreal to camera coordinates is provided  'unreal_to_camcoordsys_reflection'**    
