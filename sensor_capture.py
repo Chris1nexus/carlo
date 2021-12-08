@@ -210,7 +210,7 @@ def run_simulation(args, client):
 
                 calib_data_dict = {'label':sensor.sensor_label,
                             'sensor_to_veh_tf':sensor_manager.transform.get_matrix(), 
-                            'unreal_to_sensor_reflection':reflection_matrix.tolist()  }
+                            'unreal_to_camcoordsys_reflection':reflection_matrix.tolist()  }
                 sensor_category = sensor.sensor_bp.split('.')[-2]
                 if sensor_category == 'camera':
                     calib_data_dict['calib_mtx'] = get_camera_calibration_matrix(sensor.options).tolist()
