@@ -17,7 +17,14 @@ Carla-simulator defines its coordinate frame as LEFT-HANDED:
 + X is forward
 + Y is right
 + Z is up
-
+```  
+  ^ z               
+  |                 
+  |                 
+  | . x             
+  |/                
+  +-------> y       
+```
 ```python     
 cfg = SimulationCfg(sync_sim_stepsize=FIXED_DELTA_SECONDS)
 camera_setup_blueprints = [SenseBP.RGBCAMERA, SenseBP.DEPTH, SenseBP.SEGMENTATION]
