@@ -19,7 +19,7 @@ import os
 import sys
 import pandas as pd
 import threading
-import cv2
+
 try:
     sys.path.append(glob.glob('../carla/dist/carla-*%d.%d-%s.egg' % (
         sys.version_info.major,
@@ -34,7 +34,7 @@ import random
 import time
 import numpy as np
 import threading
-import cv2
+
 import time
 
 
