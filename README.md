@@ -86,13 +86,14 @@ Cam coordinates, in the literature are always defined and treated as follows:
 * Y down
 
 The transform from unreal engine coords to camera coords is illustrated as follows(credit to the drawing made in the examples/lidar_to_camera.py script) :
+```  
   ^ z                       . z   
   |                        /   
   |              to:      +-------> x   
   | . x                   |   
   |/                      |   
   +-------> y             v y   
-
+```
 
 
 
