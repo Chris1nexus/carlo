@@ -12,7 +12,7 @@ To define a sensor setup
 proceed by creating a SimulationCfg object, and then adding new sensors to it
 
 
-Carla-simulator defines its coordinate frame as LEFT-HANDED:
+Mote: Carla-simulator defines its coordinate frame as LEFT-HANDED:
 
 + X is forward
 + Y is right
@@ -23,8 +23,11 @@ Carla-simulator defines its coordinate frame as LEFT-HANDED:
   |                 
   | . x             
   |/                
-  +-------> y       
+  +-------> y  
 ```
+Hence, to define sensor locations with respect to the ego vehicle, you have to follow such guidelines.  
+
+
 ```python     
 cfg = SimulationCfg(sync_sim_stepsize=FIXED_DELTA_SECONDS)
 camera_setup_blueprints = [SenseBP.RGBCAMERA, SenseBP.DEPTH, SenseBP.SEGMENTATION]
@@ -77,6 +80,13 @@ E.g.
     * lidar
     * imu
     * ...
+
+Additionally, the following data is always provided:
+* weather data  
+* world location of all actors, environment object and shape of other objects in tar.bz2 format  
+* trajectory of ego vehicle, with respect to the center of its bounding box with z=0  
+
+
 
 The calibration folder contains the pose of the sensor in vehicle coordinates.   
 * calibration
