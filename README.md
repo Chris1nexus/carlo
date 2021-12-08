@@ -1,5 +1,5 @@
 # carla-data-collector
-A tool to generate synthetic autonomous driving datasets from arbitrary sensor setups from the carla simulator
+A tool to generate **synthetic autonomous driving datasets** from **arbitrary sensor setups** from the carla simulator
 ## Requirements
 numpy  
 carla (for instance segmentation 0.9.13 is required)  
