@@ -45,7 +45,7 @@ cfg.write_to_file()
 To generate the simulated sensor setup that will be automatically 
 read when calling the script sensor_capture.py
     
-##Usage:
+## Usage:
 
 0. define your sensor setup on the provided jupyter notebook or on your custom python script.
 1. Make sure to give your preferred path where the simulation setup will be generated.
