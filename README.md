@@ -1,5 +1,9 @@
 # carla-data-collector
 A tool to generate synthetic autonomous driving datasets from arbitrary sensor setups from the carla simulator
+## Requirements
+numpy  
+carla (for instance segmentation 0.9.13 is required)  
+argparse  
 
 ## Intro
 The script 'sensor_capture.py' allows to generate datasets of arbitrary size by collecting data
@@ -12,7 +16,7 @@ To define a sensor setup
 proceed by creating a SimulationCfg object, and then adding new sensors to it
 
 
-Mote: Carla-simulator defines its coordinate frame as LEFT-HANDED:
+Note: Carla-simulator defines its coordinate frame as LEFT-HANDED:
 
 + X is forward
 + Y is right
@@ -25,8 +29,9 @@ Mote: Carla-simulator defines its coordinate frame as LEFT-HANDED:
   |/                
   +-------> y  
 ```
-Hence, to define sensor locations with respect to the ego vehicle, you have to follow such guidelines.  
-
+Hence, to define sensor locations with respect to the ego vehicle, you have to follow such guidelines.   
+Also, since data about all world objects location is gathered, simulation can slow down and to compensate for that  
+the **simulation timestep should be set to 0.5 of the desired timestep, or less depending on your machine**
 
 ```python     
 cfg = SimulationCfg(sync_sim_stepsize=FIXED_DELTA_SECONDS)
