@@ -89,19 +89,12 @@ def get_world_elements_data(world, env_objs_list):
 
 def save_tracker_data_fn(outdir, world_elements, frame_id):
    
-    dir_path = os.path.join(outdir, 'object_data')
-    if not os.path.exists(dir_path):
-            os.makedirs(dir_path)
+    dir_path = outdir
+
     file_path = os.path.join(dir_path, f"{frame_id}.json")
-    #save_json(file_path, world_elements)
-
-
-    
-
+    save_json(file_path, world_elements)
+    '''
     tarinfo = tarfile.TarInfo(name=f"{frame_id}.json")
-    
-
-
     with tarfile.open(f"{file_path}.tar.bz2", "w:bz2") as outfile:
             str_ = json.dumps(world_elements,
                                           indent=4, 
@@ -111,3 +104,4 @@ def save_tracker_data_fn(outdir, world_elements, frame_id):
             tarinfo.size = len(unicode_str)
 
             outfile.addfile(tarinfo, io.BytesIO(unicode_str.encode('utf8')))
+    '''

@@ -117,6 +117,7 @@ def run_simulation(args, client):
 
 
         ################################### FIND VALID OBJECTS TO TRACK
+        '''
         valid_tags = [carla.libcarla.CityObjectLabel.Other, carla.libcarla.CityObjectLabel.NONE, carla.libcarla.CityObjectLabel.Pedestrians,
             carla.libcarla.CityObjectLabel.Buildings, 
 
@@ -127,6 +128,13 @@ def run_simulation(args, client):
             carla.libcarla.CityObjectLabel.Walls, carla.libcarla.CityObjectLabel.TrafficSigns, carla.libcarla.CityObjectLabel.Ground, carla.libcarla.CityObjectLabel.Bridge,
              carla.libcarla.CityObjectLabel.RailTrack, carla.libcarla.CityObjectLabel.TrafficLight, carla.libcarla.CityObjectLabel.Static, carla.libcarla.CityObjectLabel.Dynamic,
               carla.libcarla.CityObjectLabel.Water, carla.libcarla.CityObjectLabel.Terrain]
+        '''
+        valid_tags = [ carla.libcarla.CityObjectLabel.Pedestrians,
+             carla.libcarla.CityObjectLabel.Poles, 
+            carla.libcarla.CityObjectLabel.Vehicles, 
+            carla.libcarla.CityObjectLabel.TrafficSigns,
+            carla.libcarla.CityObjectLabel.TrafficLight, carla.libcarla.CityObjectLabel.Static, carla.libcarla.CityObjectLabel.Dynamic,
+             ]
 
         env_obj_list = []
         for tag in set(valid_tags):
@@ -238,7 +246,7 @@ def run_simulation(args, client):
                              save_data_fn=save_tracker_data_fn, 
                              custom_args=custom_args, 
                              attach_to=ego_vehicle,
-                              outdir=os.path.join(top_level_dir,  sensor_data_dir, 'object_tracker') )
+                              outdir=os.path.join(top_level_dir,  sensor_data_dir, 'object_tracker', 'object_tracker') )
 
         ############################ WAYPOINTS ###########
         waypoints_manager = SensorManager(world, 
@@ -251,7 +259,7 @@ def run_simulation(args, client):
                              save_data_fn=save_waypoints_data_fn, 
                              custom_args=custom_args, 
                              attach_to=ego_vehicle,
-                              outdir=os.path.join(top_level_dir,  sensor_data_dir, 'waypoint_trajectory', 'waypoint_trajectory_data' ))
+                              outdir=os.path.join(top_level_dir,  sensor_data_dir, 'waypoint_trajectory', 'waypoint_trajectory' ))
 
         ########################### WEATHER SENSOR ################
         weather_manager = SensorManager(world,
@@ -264,7 +272,7 @@ def run_simulation(args, client):
                              save_data_fn=save_weather_data_fn, 
                              custom_args=custom_args, 
                              attach_to=ego_vehicle,
-                              outdir=os.path.join(top_level_dir,  sensor_data_dir,'weather', 'weather_data' ))
+                              outdir=os.path.join(top_level_dir,  sensor_data_dir,'weather', 'weather' ))
         sensor_manager_list.append(tracker_manager)
         sensor_manager_list.append(waypoints_manager)
         sensor_manager_list.append(weather_manager)
