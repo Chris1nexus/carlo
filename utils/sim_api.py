@@ -15,7 +15,12 @@ class  SenseBP:
     SEMANTIC_SEGMENTATION = 'sensor.camera.semantic_segmentation'
     #EVENTCAMERA = 'sensor.camera.dvs'
 
-
+    def get_sensor_blueprints():
+    	return [value for name, value in vars(SenseBP).iteritems() if not name.startswith('_')]
+    	
+    def get_sensor_modalities():
+    	return [value.split('.')[-1] for name, value in vars(SenseBP).iteritems() if not name.startswith('_')]
+    
 class SensorAPI:
     def __init__(self, sensor_label, sensor_bp):
         self.sensor_label, self.sensor_bp = sensor_label, sensor_bp
